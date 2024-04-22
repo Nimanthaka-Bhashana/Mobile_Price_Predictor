@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Mobile Phone Price Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Mobile Phone Price Predictor</div>
+        <form action="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="ram">RAM (GB)</label>
+                    <div class="custom_select">
+                        <select name="ram" id="ram" required>
+                            <option value="" selected hidden>Select</option>
+                            <option value="2">2 GB</option>
+                            <option value="3">3 GB</option>
+                            <option value="4">4 GB</option>
+                            <option value="5">5 GB</option>
+                            <option value="6">6 GB</option>
+                            <option value="8">8 GB</option>
+                            <option value="12">12 GB</option>
+                            <option value="16">16 GB</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="inputfield">
+                    <label for="storage">Storage</label>
+                    <div class="custom_select">
+                        <select name="storage" id="storage" required>
+                            <option value="" selected hidden>Select</option>
+                            <option value="32">32 GB</option>
+                            <option value="64">64 GB</option>
+                            <option value="128">128 GB</option>
+                            <option value="256">256 GB</option>
+                            <option value="512">512 GB</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="inputfield">
+                    <label for="battery_capacity">Battery Capacity (mAh)</label>
+                    
+                    <div class = "custom_select">
+                        <select name="battery_capacity" id="battery_capacity" required>
+                            <option value="" selected hidden>Select</option>
+                            <option value="2000">2000</option>
+                            <option value="3000">3000</option>
+                            <option value="4000">4000</option>
+                            <option value="5000">5000</option>
+                            <option value="6000">6000</option>
+                            <option value="7000">7000</option>
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="brand_t">Brand</label>
+                    <div class = "custom_select">
+                        <select name="brand_t" id="brand_t" required>
+                            <option value="" selected hidden>Select</option>
+                            <option value="samsung">Samsung</option>
+                            <option value="xiaomi">Xiaomi</option>
+                            <option value="oppo">Oppo</option>
+                            <option value="realme">Realme</option>
+                            <option value="vivo">Vivo</option>
+                            <option value="apple">Apple</option>
+                            <option value="nokia">Nokia</option>
+                            <option value="motorola">Motorola</option>
+                            <option value="oneplus">OnePlus</option>
+                            <option value="huawei">Huawei</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <input class="btn" type="submit" value="Predict Price">
+                </div>
+            </div>
+        </form>
+
+        <div class="result">
+            {% if pred_value != 0 %}
+            <p> Estimate Price : LKR {{pred_value}}</p>
+            {% endif %}
+           
+        </div>
+    </div>
+</body>
+</html>
